@@ -1,6 +1,6 @@
 {
   "name": "dsh-conversation-manager",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "自研 DeepSeek Harness 会话管理插件：删除对话（回收站可恢复/彻底清除）+ 已归档会话管理 + 批量删除。",
   "author": "TrisChick",
   "repository": {
@@ -9,19 +9,18 @@
   },
   "private": true,
   "type": "module",
-  "main": "lib/index.js",
   "exports": {
-    ".": {
-      "default": "./lib/index.js"
-    },
-    "./client": {
-      "default": "./lib/client.js"
-    },
-    "./package.json": "./package.json"
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
   },
   "files": [
-    "lib",
+    "index.js",
+    "client.js",
     "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
@@ -32,7 +31,7 @@
     },
     "client": {
       "platform": "web",
-      "inject": []
+      "immediately": true
     }
   },
   "engines": {
